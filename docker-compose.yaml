@@ -1,0 +1,29 @@
+---
+version: '3'
+# use with docker-compose up
+services:
+  mysql:
+    container_name: my_mysql
+    image: mysql/mysql-server:5.7
+    hostname: my_mysql
+    ports:
+      - '3306:3306'
+    volumes:
+      - my_mysql:/var/docker/my_mysql/
+    environment:
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD=welcome1
+      - MYSQL_USER=my_mysql
+      - MYSQL_PASSWORD=welcome1
+      - MYSQL_DATABASE=my_development
+  app:
+    build: .
+    command: bundle exec rails s -p 4000 -b '0.0.0.0'
+    volumes:
+      - .:/oracle
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mysql
+volumes:
+  my_mysql:
