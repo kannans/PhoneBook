@@ -12,7 +12,7 @@ development:
   database: phone_book_development
 
 test:
-  <<:
+  <<: *default
   database: phone_book_test
 
 production:
