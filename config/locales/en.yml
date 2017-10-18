@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  edit: Edit
+  delete: Delete
+  back: " Back"
+  contacts:
+    form:
+      postal_address: Postal Address
+      phone_number: Phone Number

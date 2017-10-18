@@ -9,7 +9,7 @@ default: &default
 
 development:
   <<: *default
-  database: my_development
+  database: phone_book_development
 
 test:
   <<:

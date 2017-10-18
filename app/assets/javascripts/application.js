@@ -16,3 +16,4 @@
 // located under app/assets
 //= require oracle_admin
 //= require custom
+//= require jquery_nested_form

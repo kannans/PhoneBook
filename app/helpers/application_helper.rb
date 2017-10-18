@@ -22,4 +22,8 @@ module ApplicationHelper
       true
     end
   end
+
+  def link_with_icon(icon, path = "#",  options = {})
+    link_to content_tag(:i, "", class: "fa fa-#{icon}"), path, options
+  end
 end

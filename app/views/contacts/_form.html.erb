@@ -1,0 +1,35 @@
+
+<%= nested_form_for @contact do |form| %>
+  <%= error_messages_for(form.object) %>
+  <div class="form-group" >
+    <%= form.label :name, 'Name:' %><br>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <hr>
+  
+  <div class="field phone_number">
+    <h4><%= label_tag t(".phone_number") %></h4>
+    <%= form.fields_for :phone_numbers do |postal_address| %>
+      <%= postal_address.text_field :number, class: "form-control" %>
+      <%= postal_address.link_to_remove content_tag(:i, "", class: "fa fa-trash delete-step-track-ouput text-danger"), class: "btn btn-xs btn-default" %>
+    <% end %>
+    <%= form.link_to_add content_tag(:i, "", class: "fa fa-plus-circle") + " Add another number", :phone_numbers, class: "btn btn-xs btn-default" %>
+  </div>
+  <hr>
+
+  <div class="field postal_address">
+    <h4><%= label_tag t(".postal_address") %></h4>
+    <%= form.fields_for :postal_addresses do |postal_address| %>
+      <%= postal_address.text_area :address, class: "form-control" %>
+      <%= postal_address.link_to_remove content_tag(:i, "", class: "fa fa-trash delete-step-track-ouput text-danger"), class: "btn btn-xs btn-default"  %>
+    <% end %>
+    <%= form.link_to_add content_tag(:i, "", class: "fa fa-plus-circle") + " Add another postal address", :postal_addresses, class: "btn btn-xs btn-default"  %>
+  </div>
+
+  <hr>
+  <div class="actions">
+    <%= form.submit class:"btn btn-success" %>
+    <%= link_to 'Cancel', contacts_path, class:"btn"  %>
+  </div>
+<% end %>

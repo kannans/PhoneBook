@@ -1,0 +1,44 @@
+<% content_for(:page_header) do %>
+  Contact Name:~ <%= @contact.name %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to content_tag(:i, "", class: "fa fa-arrow-left"), contacts_path, title: t("back") %>
+    <%= link_with_icon "pencil-square-o", edit_contact_path(@contact), title: t("edit") %>
+    <%= link_with_icon "trash-o", @contact, method: :delete, data: { confirm: 'Are you sure?' }, title: t("delete") %>
+  </div>
+  <div class="col-md-6">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><h4> <i class="fa fa-address-card"></i>    Postal Adresses</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @contact.postal_addresses.each do |addr|%>
+          <tr>
+            <th><%= simple_format addr.address %></th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-6">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th><h4><i class="fa fa-phone"></i>   Phone Numbers</h4></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @contact.phone_numbers.each do |phone|%>
+            <tr>
+              <th><%= phone.number %></th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</div>

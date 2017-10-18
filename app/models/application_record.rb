@@ -31,4 +31,8 @@ class ApplicationRecord < ActiveRecord::Base
     with: Resolv::IPv4::Regex,
     message: 'must be valid IP format'
   }.freeze
+  PHONE_REGEX = {
+    with: /(?:\+?|\b)[0-9]{10}\b/i,
+    message: 'must be valid mobile number'
+  }.freeze
 end
