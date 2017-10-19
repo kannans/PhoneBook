@@ -34,7 +34,11 @@ en:
   edit: Edit
   delete: Delete
   back: " Back"
+  action: "Actions"
   contacts:
     form:
       postal_address: Postal Address
       phone_number: Phone Number
+    index:
+      contact_list: Contact List
+      name: Name

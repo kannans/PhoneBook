@@ -12,7 +12,7 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th><h4> <i class="fa fa-address-card"></i>    Postal Adresses</h4></th>
+          <th><h4> <i class="fa fa-address-card"></i> Postal Adresses</h4></th>
         </tr>
       </thead>
       <tbody>
@@ -26,19 +26,19 @@
   </div>
 
   <div class="col-md-6">
-      <table class="table table-bordered">
-        <thead>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><h4><i class="fa fa-phone"></i> Phone Numbers</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @contact.phone_numbers.each do |phone|%>
           <tr>
-            <th><h4><i class="fa fa-phone"></i>   Phone Numbers</h4></th>
+            <th><%= phone.number %></th>
           </tr>
-        </thead>
-        <tbody>
-          <% @contact.phone_numbers.each do |phone|%>
-            <tr>
-              <th><%= phone.number %></th>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

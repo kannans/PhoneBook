@@ -32,7 +32,7 @@ class ApplicationRecord < ActiveRecord::Base
     message: 'must be valid IP format'
   }.freeze
   PHONE_REGEX = {
-    with: /(?:\+?|\b)[0-9]{10}\b/i,
+    with: /\A(?:\+?\d{1,3}\s*-?)?\(?(?:\d{3})?\)?[- ]?\d{3}[- ]?\d{4}\z/i,
     message: 'must be valid mobile number'
   }.freeze
 end

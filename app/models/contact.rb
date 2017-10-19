@@ -5,5 +5,5 @@ class Contact < ApplicationRecord
   accepts_nested_attributes_for :phone_numbers, allow_destroy: true
   accepts_nested_attributes_for :postal_addresses, allow_destroy: true
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 end

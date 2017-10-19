@@ -4,7 +4,7 @@ default: &default
   pool: 5
   username: my_mysql
   password: welcome1
-  host: mysql
+  host: localhost #mysql
   port: 3306
 
 development:
@@ -12,7 +12,7 @@ development:
   database: my_development
 
 test:
-  <<:
+  <<: *default
   database: phone_book_test
 
 production:

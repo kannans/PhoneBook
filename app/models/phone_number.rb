@@ -3,6 +3,6 @@ class PhoneNumber < ApplicationRecord
   validates :number,
             presence: true,
             uniqueness: true,
-            numericality:  true,
-            length: { minimum: 10, maximum: 15 }
+            format: PHONE_REGEX,
+            length: { minimum: 10, maximum: 20 }
 end
