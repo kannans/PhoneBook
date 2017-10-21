@@ -11,7 +11,6 @@ RUN apt-get update && \
 WORKDIR /home
 ADD ./Gemfile Gemfile
 ADD ./Gemfile.lock Gemfile.lock
-ADD ./config/database-docker.yml config/database.yml
 RUN bundle install
 
 ENV APP_ROOT /workspace
